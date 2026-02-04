@@ -80,9 +80,19 @@ body {
 /* --- العناوين --- */
 h1 {
     font-size: 64px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     text-shadow: 2px 2px 12px rgba(0,0,0,0.7);
     background: linear-gradient(90deg, #00ffcc, #0066ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* --- العناوين الفرعية --- */
+h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 8px rgba(0,0,0,0.7);
+    background: linear-gradient(90deg, #ffcc00, #ff6600);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -144,8 +154,21 @@ button:hover {
 
 <body>
 
-<!-- --- الشرائح --- -->
-<div class="slide active" style="--bg:url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa');">
+<!-- --- شريحة البداية --- -->
+<div class="slide active" style="--bg:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb');">
+    <div class="slide-content">
+        <h1>Protecting Nature Project</h1>
+        <h2>Class: 2S2</h2>
+        <p>Members:</p>
+        <p>Aladdin Ziati</p>
+        <p>Mohamed Belhaji</p>
+        <p>Imane Ben Mshernan</p>
+        <p>Yasmin Mahlahel</p>
+    </div>
+</div>
+
+<!-- --- الشرائح الأخرى --- -->
+<div class="slide" style="--bg:url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa');">
     <div class="slide-content">
         <h1>🌍 Our Planet Earth</h1>
         <p>
