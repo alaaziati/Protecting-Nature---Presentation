@@ -5,7 +5,6 @@
 <title>Protecting Nature - Presentation</title>
 
 <style>
-/* --- إعدادات عامة --- */
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -13,7 +12,7 @@ body {
     background: black;
 }
 
-/* --- الشرائح --- */
+/* ---------- الشرائح ---------- */
 .slide {
     position: absolute;
     width: 100%;
@@ -37,23 +36,23 @@ body {
     z-index: 2;
 }
 
-/* --- إزالة حركة الصور --- */
+/* طبقة تعتيم لزيادة وضوح النص */
 .slide::before {
     content: "";
     position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-size: cover;
-    background-position: center;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
     z-index: -1;
-    filter: brightness(0.6);
 }
 
-/* --- محتوى الشريحة --- */
+/* ---------- محتوى الشريحة ---------- */
 .slide-content {
     max-width: 900px;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     transition: transform 0.4s ease, color 0.3s ease, opacity 1s ease;
     cursor: pointer;
     opacity: 0;
@@ -67,44 +66,41 @@ body {
 
 .slide-content:hover {
     transform: translateY(-10px) scale(1.05);
-    color: #00ffcc;
 }
 
-/* --- العناوين --- */
+/* ---------- العناوين ---------- */
 h1 {
     font-size: 64px;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 12px rgba(0,0,0,0.7);
     background: linear-gradient(90deg, #00ffcc, #0066ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 15px rgba(0,0,0,0.9);
 }
 
-/* --- العناوين الفرعية --- */
 h2 {
     font-size: 36px;
     margin-bottom: 15px;
-    text-shadow: 1px 1px 8px rgba(0,0,0,0.7);
     background: linear-gradient(90deg, #ffcc00, #ff6600);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 12px rgba(0,0,0,0.9);
 }
 
-/* --- الفقرات --- */
+/* ---------- الفقرات ---------- */
 p {
     font-size: 24px;
     line-height: 1.8;
-    text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
-    transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+    text-shadow: 0 0 10px rgba(0,0,0,0.9);
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 p:hover {
     transform: scale(1.05) translateX(5px);
     color: #00ffcc;
-    text-shadow: 2px 2px 12px rgba(0,255,204,0.8);
 }
 
-/* --- الأزرار --- */
+/* ---------- الأزرار ---------- */
 .buttons {
     position: fixed;
     bottom: 25px;
@@ -128,11 +124,10 @@ button {
 
 button:hover {
     transform: scale(1.15);
-    background: linear-gradient(90deg, #00e6b8, #0047b3);
     box-shadow: 2px 2px 25px rgba(0,255,204,1);
 }
 
-/* --- شريط التقدم --- */
+/* ---------- شريط التقدم ---------- */
 .progress-bar {
     position: fixed;
     bottom: 0;
@@ -147,8 +142,8 @@ button:hover {
 
 <body>
 
-<!-- --- شريحة البداية --- -->
-<div class="slide active" style="--bg:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb');">
+<!-- شريحة البداية -->
+<div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb');">
     <div class="slide-content">
         <h1>Protecting Nature Project</h1>
         <h2>Class: 2S2</h2>
@@ -160,69 +155,47 @@ button:hover {
     </div>
 </div>
 
-<!-- --- باقي الشرائح --- -->
-<div class="slide" style="--bg:url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa');">
+<!-- باقي الشرائح -->
+<div class="slide" style="background-image:url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa');">
     <div class="slide-content">
         <h1>🌍 Our Planet Earth</h1>
-        <p>
-            Earth is the only known planet that supports life. It provides us with clean air to breathe,
-            fresh water to drink, and land to grow our food. Forests, oceans, and wildlife all work together
-            to keep our planet balanced. Protecting Earth means protecting our future.
-        </p>
+        <p>Earth is the only known planet that supports life...</p>
     </div>
 </div>
 
-<div class="slide" style="--bg:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470');">
+<div class="slide" style="background-image:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470');">
     <div class="slide-content">
         <h1>🌿 What Is Nature?</h1>
-        <p>
-            Nature includes everything that is not made by humans: mountains, rivers, forests, animals,
-            and even the air around us. Nature gives beauty to our world and plays a very important role
-            in keeping the environment healthy and alive.
-        </p>
+        <p>Nature includes everything that is not made by humans...</p>
     </div>
 </div>
 
-<div class="slide" style="--bg:url('https://images.unsplash.com/photo-1472214103451-9374bd1c798e');">
+<div class="slide" style="background-image:url('https://images.unsplash.com/photo-1472214103451-9374bd1c798e');">
     <div class="slide-content">
         <h1>⚠️ Dangers Facing Nature</h1>
-        <p>
-            Today, nature is in serious danger. Pollution from factories and cars is making the air dirty.
-            Cutting too many trees causes deforestation, which destroys animal homes. Climate change is
-            increasing temperatures and causing natural disasters. If we do not act now, future generations
-            will suffer the consequences.
-        </p>
+        <p>Today, nature is in serious danger due to pollution...</p>
     </div>
 </div>
 
-<div class="slide" style="--bg:url('https://images.unsplash.com/photo-1469474968028-56623f02e42e');">
+<div class="slide" style="background-image:url('https://images.unsplash.com/photo-1469474968028-56623f02e42e');">
     <div class="slide-content">
         <h1>💚 How Can We Protect Nature?</h1>
-        <p>
-            Every person can help protect nature. We can recycle waste, reduce plastic use, save water and
-            electricity, and plant more trees. Small daily actions can make a big difference. Working together,
-            we can create a cleaner, greener, and safer planet for everyone.
-        </p>
+        <p>Every person can help protect nature by small daily actions...</p>
     </div>
 </div>
 
-<div class="slide" style="--bg:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb');">
+<div class="slide" style="background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb');">
     <div class="slide-content">
         <h1>🎉 Thank You!</h1>
-        <p>
-            Let's all commit to protecting our planet every day. Remember, small actions lead to big changes.
-            Together, we can make Earth a better place for future generations.
-        </p>
+        <p>Together, we can make Earth a better place.</p>
     </div>
 </div>
 
-<!-- --- أزرار التنقل --- -->
 <div class="buttons">
     <button onclick="prevSlide()">⬅ Back</button>
     <button onclick="nextSlide()">Next ➡</button>
 </div>
 
-<!-- --- شريط التقدم --- -->
 <div class="progress-bar" id="progressBar"></div>
 
 <script>
@@ -230,45 +203,33 @@ let slides = document.querySelectorAll(".slide");
 let current = 0;
 let progressBar = document.getElementById("progressBar");
 
-// تعيين الخلفيات
-slides.forEach(slide => {
-    slide.style.setProperty('--bg', slide.style.getPropertyValue('--bg'));
-    slide.style.backgroundImage = slide.style.getPropertyValue('--bg');
-});
-
-// عرض الشريحة
 function showSlide(index) {
     slides.forEach((s, i) => {
+        s.classList.remove("active");
+        s.style.zIndex = 1;
         if(i === index){
             s.classList.add("active");
             s.style.zIndex = 2;
-        } else {
-            s.classList.remove("active");
-            s.style.zIndex = 1;
         }
     });
     updateProgressBar();
 }
 
-// الانتقال للشريحة التالية
 function nextSlide() {
     current = (current + 1) % slides.length;
     showSlide(current);
 }
 
-// الانتقال للشريحة السابقة
 function prevSlide() {
     current = (current - 1 + slides.length) % slides.length;
     showSlide(current);
 }
 
-// تحديث شريط التقدم
 function updateProgressBar() {
     let progress = ((current + 1) / slides.length) * 100;
     progressBar.style.width = progress + "%";
 }
 
-// تشغيل شريط التقدم لأول مرة
 updateProgressBar();
 </script>
 
