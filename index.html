@@ -29,32 +29,26 @@ body {
     background-position: center;
     opacity: 0;
     transition: opacity 1s ease-in-out;
-    z-index: 1; /* افتراضي لكل الشرائح */
+    z-index: 1;
 }
 
 .slide.active {
     opacity: 1;
-    z-index: 2; /* الشريحة النشطة فوق */
+    z-index: 2;
 }
 
-/* --- تأثير الحركة الخلفية --- */
+/* --- إزالة حركة الصور --- */
 .slide::before {
     content: "";
     position: absolute;
-    width: 110%;
-    height: 110%;
-    top: -5%;
-    left: -5%;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
     background-size: cover;
     background-position: center;
     z-index: -1;
-    animation: zoomEffect 20s infinite alternate;
     filter: brightness(0.6);
-}
-
-@keyframes zoomEffect {
-    from { transform: scale(1); }
-    to { transform: scale(1.1); }
 }
 
 /* --- محتوى الشريحة --- */
@@ -71,7 +65,6 @@ body {
     transform: translateY(0);
 }
 
-/* تأثير hover على المحتوى */
 .slide-content:hover {
     transform: translateY(-10px) scale(1.05);
     color: #00ffcc;
@@ -167,7 +160,7 @@ button:hover {
     </div>
 </div>
 
-<!-- --- الشرائح الأخرى --- -->
+<!-- --- باقي الشرائح --- -->
 <div class="slide" style="--bg:url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa');">
     <div class="slide-content">
         <h1>🌍 Our Planet Earth</h1>
@@ -248,10 +241,10 @@ function showSlide(index) {
     slides.forEach((s, i) => {
         if(i === index){
             s.classList.add("active");
-            s.style.zIndex = 2; // الشريحة الحالية فوق
+            s.style.zIndex = 2;
         } else {
             s.classList.remove("active");
-            s.style.zIndex = 1; // باقي الشرائح تحت
+            s.style.zIndex = 1;
         }
     });
     updateProgressBar();
